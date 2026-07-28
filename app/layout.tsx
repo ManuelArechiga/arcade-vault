@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Press_Start_2P, JetBrains_Mono, Courier_Prime } from "next/font/google";
+import { AuthProvider } from "@/context/auth-context";
 import "./globals.css";
 
 const pressStart2P = Press_Start_2P({
@@ -35,9 +36,11 @@ export default function RootLayout({
       className={`${pressStart2P.variable} ${jetBrainsMono.variable} ${courierPrime.variable} h-full antialiased`}
     >
       <body id="root" className="min-h-full flex flex-col">
-        <div className="av-bg" />
-        <div className="av-noise" />
-        <div className="av-main">{children}</div>
+        <AuthProvider>
+          <div className="av-bg" />
+          <div className="av-noise" />
+          <div className="av-main">{children}</div>
+        </AuthProvider>
       </body>
     </html>
   );
