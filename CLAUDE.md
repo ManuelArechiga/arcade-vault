@@ -6,14 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Concretely: this project runs **Next.js 16.2.12** with React 19.2.4 — newer than most training data. Before writing any Next.js code (routing, data fetching, config, metadata, etc.), consult the bundled docs at `node_modules/next/dist/docs/` (organized into `01-app`, `02-pages`, `03-architecture`, `04-community`) rather than relying on prior knowledge.
 
-## Commands
+## Frontend design
 
-- `npm run dev` — start the dev server
-- `npm run build` — production build
-- `npm run start` — run the production build
-- `npm run lint` — run ESLint (flat config via `eslint.config.mjs`)
-
-There is no test runner configured yet.
+Always use the `/frontend-design` skill when designing or reshaping any frontend UI in this project.
 
 ## Architecture
 
