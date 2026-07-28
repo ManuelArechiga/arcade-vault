@@ -1,6 +1,6 @@
 # Spec 01 — MVP Visual de Arcade Vault
 
-**Estado:** Approved
+**Estado:** Implementado
 **Dependencias:** Ninguna (primer spec del proyecto)
 **Fecha:** 2026-07-28
 
