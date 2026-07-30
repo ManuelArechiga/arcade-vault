@@ -15,11 +15,11 @@ export default function AuthPage() {
   const submit = (e: FormEvent) => {
     e.preventDefault();
     login({ name: (user || "PLAYER1").toUpperCase().slice(0, 10) });
-    router.push("/");
+    router.push("/juegos");
   };
 
   const playAsGuest = () => {
-    router.push("/");
+    router.push("/juegos");
   };
 
   return (
