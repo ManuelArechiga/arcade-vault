@@ -13,7 +13,7 @@ export function Nav() {
 
   const isActive = (name: "biblioteca" | "salon" | "auth") => {
     if (name === "biblioteca") {
-      return pathname === "/" || pathname.startsWith("/detalle") || pathname.startsWith("/jugador");
+      return pathname.startsWith("/juegos") || pathname.startsWith("/jugador");
     }
     if (name === "salon") return pathname.startsWith("/salon");
     return pathname.startsWith("/auth");
