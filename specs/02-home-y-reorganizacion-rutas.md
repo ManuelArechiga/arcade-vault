@@ -1,6 +1,6 @@
 # Spec 02 — Home y reorganización de rutas
 
-**Estado:** Approved
+**Estado:** Implementado
 **Dependencias:** Spec 01 — MVP Visual (implementado)
 **Fecha:** 2026-07-30
 
@@ -54,26 +54,26 @@ No aplica — este spec no introduce ni modifica estructuras de datos. Reutiliza
 
 ## Criterios de aceptación
 
-- [ ] Visitar `/` muestra el nuevo Home (hero, features, preview de juegos, stats, actividad en vivo, precios, CTA final) con la estética pixel/neón del sitio.
-- [ ] El botón "EXPLORAR JUEGOS" del Home navega a `/juegos`.
-- [ ] El botón "CREAR CUENTA" del Home navega a `/auth`.
-- [ ] Las `MiniCard` del Home navegan a `/juegos/[id]` del juego correspondiente.
-- [ ] El botón "VER TODOS LOS JUEGOS" y el CTA final del Home navegan a `/juegos`.
-- [ ] El botón "VER SALÓN" de la sección de actividad navega a `/salon`.
-- [ ] Visitar `/juegos` muestra la Biblioteca (hero, buscador, chips, grid) con el mismo comportamiento que tenía en `/` antes de este cambio.
-- [ ] Visitar `/juegos/bloque-buster` (o cualquier id válido de `GAMES`) muestra el Detalle del juego con el mismo comportamiento que tenía en `/detalle/bloque-buster`.
-- [ ] Visitar `/detalle/bloque-buster` redirige (308) a `/juegos/bloque-buster`.
-- [ ] Visitar `/juegos/no-existe` dispara `notFound()` y muestra el 404 personalizado (no el genérico de Next.js).
-- [ ] Visitar cualquier ruta inexistente (ej. `/no-existe`) muestra el 404 personalizado con estética pixel/neón, mensaje claro y botón "VOLVER AL VAULT" que lleva a `/juegos`.
-- [ ] Desde `/juegos`, `/juegos/[id]` o `/jugador/[id]`, el link "Biblioteca" del Nav aparece activo (resaltado).
-- [ ] Desde `/`, ningún link del Nav aparece activo.
-- [ ] El botón "SALIR" en `/jugador/[id]` navega correctamente a `/juegos/[id]` (ya no a `/detalle/[id]`).
-- [ ] Los botones/links "VOLVER AL VAULT" en `/jugador/[id]` (modal de fin de partida) y en `/juegos/[id]` navegan a `/juegos`.
-- [ ] El link "VOLVER A LA BIBLIOTECA" en `/salon` navega a `/juegos`.
-- [ ] Iniciar sesión o entrar como invitado desde `/auth` navega a `/juegos`.
-- [ ] El logo del Nav sigue navegando a `/` (Home).
-- [ ] No quedan referencias a `/detalle` en el código fuente (`app/`, `components/`) salvo la entrada de redirect en `next.config.ts`.
-- [ ] La página `/about` (o cualquier ruta relacionada) no existe ni tiene entrada en el Nav.
+- [x] Visitar `/` muestra el nuevo Home (hero, features, preview de juegos, stats, actividad en vivo, precios, CTA final) con la estética pixel/neón del sitio.
+- [x] El botón "EXPLORAR JUEGOS" del Home navega a `/juegos`.
+- [x] El botón "CREAR CUENTA" del Home navega a `/auth`.
+- [x] Las `MiniCard` del Home navegan a `/juegos/[id]` del juego correspondiente.
+- [x] El botón "VER TODOS LOS JUEGOS" y el CTA final del Home navegan a `/juegos`.
+- [x] El botón "VER SALÓN" de la sección de actividad navega a `/salon`.
+- [x] Visitar `/juegos` muestra la Biblioteca (hero, buscador, chips, grid) con el mismo comportamiento que tenía en `/` antes de este cambio.
+- [x] Visitar `/juegos/bloque-buster` (o cualquier id válido de `GAMES`) muestra el Detalle del juego con el mismo comportamiento que tenía en `/detalle/bloque-buster`.
+- [x] Visitar `/detalle/bloque-buster` redirige (308) a `/juegos/bloque-buster`.
+- [x] Visitar `/juegos/no-existe` dispara `notFound()` y muestra el 404 personalizado (no el genérico de Next.js).
+- [x] Visitar cualquier ruta inexistente (ej. `/no-existe`) muestra el 404 personalizado con estética pixel/neón, mensaje claro y botón "VOLVER AL VAULT" que lleva a `/juegos`.
+- [x] Desde `/juegos`, `/juegos/[id]` o `/jugador/[id]`, el link "Biblioteca" del Nav aparece activo (resaltado).
+- [x] Desde `/`, ningún link del Nav aparece activo.
+- [x] El botón "SALIR" en `/jugador/[id]` navega correctamente a `/juegos/[id]` (ya no a `/detalle/[id]`).
+- [x] Los botones/links "VOLVER AL VAULT" en `/jugador/[id]` (modal de fin de partida) y en `/juegos/[id]` navegan a `/juegos`.
+- [x] El link "VOLVER A LA BIBLIOTECA" en `/salon` navega a `/juegos`.
+- [x] Iniciar sesión o entrar como invitado desde `/auth` navega a `/juegos`.
+- [x] El logo del Nav sigue navegando a `/` (Home).
+- [x] No quedan referencias a `/detalle` en el código fuente (`app/`, `components/`) salvo la entrada de redirect en `next.config.ts`.
+- [x] La página `/about` (o cualquier ruta relacionada) no existe ni tiene entrada en el Nav.
 
 ## Decisiones tomadas y descartadas
 
