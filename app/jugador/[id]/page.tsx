@@ -77,7 +77,7 @@ export default function GamePlayerPage() {
           <button className="btn magenta" onClick={endGame}>
             FIN
           </button>
-          <button className="btn ghost" onClick={() => router.push(`/detalle/${game.id}`)}>
+          <button className="btn ghost" onClick={() => router.push(`/juegos/${game.id}`)}>
             SALIR
           </button>
         </div>
