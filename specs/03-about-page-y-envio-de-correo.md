@@ -1,6 +1,6 @@
 # Spec 03 — About Page y envío de correo (Resend)
 
-**Estado:** Approved
+**Estado:** Implementado
 **Dependencias:** Spec 02 — Home y reorganización de rutas (implementado)
 **Fecha:** 2026-07-31
 
@@ -75,17 +75,17 @@ El mensaje enviado por Resend usa `name`/`email`/`msg` para armar el `subject` (
 
 ## Criterios de aceptación
 
-- [ ] Visitar `/about` muestra el hero "Acerca de Arcade Vault", el mission statement, la fila de 3 highlights y el divider decorativo, con la estética pixel/neón del sitio.
-- [ ] El link "Acerca de" aparece en el Nav (desktop y menú móvil) y navega a `/about`.
-- [ ] Desde `/about`, el link "Acerca de" del Nav aparece activo (resaltado); desde otras rutas, no.
-- [ ] Enviar el formulario con nombre, email y mensaje válidos muestra el estado `terminal-success` con el nombre del usuario, y el correo llega efectivamente a `CONTACT_TO_EMAIL`.
-- [ ] Enviar el formulario con algún campo vacío dispara el shake, sin llamar a `/api/contact`.
-- [ ] Enviar el formulario con un email de formato inválido (ej. `abc123`) dispara el shake (o mensaje equivalente), sin llamar a `/api/contact`.
-- [ ] Si `POST /api/contact` fallara (ej. `RESEND_API_KEY` inválida), el formulario muestra un estado de error visual con mensaje claro y botón para reintentar, sin perder los datos escritos.
-- [ ] Mientras la petición está en curso, el botón de envío refleja un estado de carga (deshabilitado o con indicador visual) para evitar doble envío.
-- [ ] `POST /api/contact` con body inválido (campo vacío o email mal formado) responde `400` con `{ ok: false, error }`.
-- [ ] `POST /api/contact` con body válido responde `200` con `{ ok: true }` y el correo llega con `name`/`email`/`msg` correctos en el contenido.
-- [ ] `.env.local` contiene `RESEND_API_KEY` y `CONTACT_TO_EMAIL`, y no está trackeado por git (`git status` no lo muestra).
+- [x] Visitar `/about` muestra el hero "Acerca de Arcade Vault", el mission statement, la fila de 3 highlights y el divider decorativo, con la estética pixel/neón del sitio.
+- [x] El link "Acerca de" aparece en el Nav (desktop y menú móvil) y navega a `/about`.
+- [x] Desde `/about`, el link "Acerca de" del Nav aparece activo (resaltado); desde otras rutas, no.
+- [x] Enviar el formulario con nombre, email y mensaje válidos muestra el estado `terminal-success` con el nombre del usuario, y el correo llega efectivamente a `CONTACT_TO_EMAIL`.
+- [x] Enviar el formulario con algún campo vacío dispara el shake, sin llamar a `/api/contact`.
+- [x] Enviar el formulario con un email de formato inválido (ej. `abc123`) dispara el shake (o mensaje equivalente), sin llamar a `/api/contact`. (Verificado vía la validación nativa `type="email"` del navegador, que bloquea el submit antes de llegar al handler; el regex de respaldo se verificó en el servidor.)
+- [x] Si `POST /api/contact` fallara (ej. `RESEND_API_KEY` inválida), el formulario muestra un estado de error visual con mensaje claro y botón para reintentar, sin perder los datos escritos.
+- [x] Mientras la petición está en curso, el botón de envío refleja un estado de carga (deshabilitado o con indicador visual) para evitar doble envío.
+- [x] `POST /api/contact` con body inválido (campo vacío o email mal formado) responde `400` con `{ ok: false, error }`.
+- [x] `POST /api/contact` con body válido responde `200` con `{ ok: true }` y el correo llega con `name`/`email`/`msg` correctos en el contenido.
+- [x] `.env.local` contiene `RESEND_API_KEY` y `CONTACT_TO_EMAIL`, y no está trackeado por git (`git status` no lo muestra).
 
 ## Decisiones tomadas y descartadas
 
